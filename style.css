@@ -1,0 +1,131 @@
+
+.flex-class{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+    background-image: url("R.jpg");
+}
+.backg{
+    background-image: url("R.jpg");
+
+}
+.wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: 0.3s ease;
+    z-index: 2;
+}
+.s-wrapper{
+    height: 90vh;
+    width: 100%;
+    overflow: hidden;
+}
+.content{
+    height: 100%;
+    width: 70%;
+    min-width: 250px;
+    max-width: 350px;
+}
+
+.container{
+    background-image: url("R.jpg");
+    background-repeat: no-repeat; 
+    background-attachment: scroll;
+    width: 100%;
+    border: 1px solid #3333334d;
+    padding: 25px;
+    padding-top: 40px;
+    border-radius: 10px;
+}
+.name{
+    font-size: 26px;
+    letter-spacing: 2px;
+    color: #f3f3f3;
+    font-weight: 600;
+    margin: 0px;
+    margin-bottom: 5px;
+}
+
+.warnmsg {
+    color: rgb(255, 49, 49);
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+input{
+    border: none;
+    margin: 6px;
+    padding: 10px;
+    width: 80%;
+    border: 2px solid #aeaeb5;
+    background-color: #00000050;
+    font-size: small;
+    border-radius: 50em;
+    color: whitesmoke;
+}
+input::placeholder{
+    color: rgb(180, 180, 180);
+}
+input::-ms-reveal {
+    filter: invert(100%);
+  }
+input:focus {
+    outline: none;
+    border-color: #2bb5d8;
+    box-shadow: 0 0 10px #2bb5d8;
+  }
+button{
+    width: 40%;
+    height: 35px;
+    background-color: #8a348bc7;
+    color: #fff;
+    font-weight: 600;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+}
+.forgot-password{
+    color: #ebebeb;
+    font-size: small;
+    cursor: pointer;
+    margin-top: 10px;
+    align-items: left;
+}
+.forgot-password:hover{
+    text-decoration: underline;
+
+}
+.sub-container{
+    width: 100%;
+    font-size: 18px;
+    color: whitesmoke;
+}
+
+.sub-container span{
+    color: #002fffe5;
+    margin-left: 3px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.sub-container span:hover{
+    text-decoration: underline;
+}
+.loged-in{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: none;
+}

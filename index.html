@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <title>Login Page</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <section class="s-wrapper flex-class">
+            <div class="content flex-class">
+                <div class="container flex-class">
+                    <p class="name">Login Page</p>
+                    <div class="warnmsg" id="lerrmsg"></div>
+                    <input type="email" name="email" id="l-email" placeholder="Email">
+                    <input type="password" name="password" id="l-password" placeholder="Password">
+                    <button onclick="login()" id="l-button">Log In</button>
+                    <br>
+                    <div class="forgot-password">forgot password?</div>
+                </div>
+                <div class="sub-container flex-class">
+                    <p>Create an account <span id="s-link">Sign Up</span></p>
+                </div>
+            </div>
+        </section>
+        <section class="s-wrapper flex-class">
+            <div class="content flex-class">
+                <div class="container flex-class">
+                    <p class="name">Login Page</p>
+                    <div class="warnmsg" id="serrmsg"></div>
+                    <input type="email" name="email" id="s-email" placeholder="Email">
+                    <input type="text" name="name" id="s-name" placeholder="Full Name">
+                    <input type="password" name="password" id="s-password" placeholder="Password">
+                    <input type="password" name="cpassword" id="c-password" placeholder="Confirm Password">
+                    <button onclick="register()" id="s-button">Sign Up</button>
+                    <br>
+                </div>
+                <div class="sub-container flex-class">
+                    <p>Have an account? <span id="l-link">Login</span></p>
+                </div>
+            </div>
+        </section>
+        <section class="loged-in s-wrapper flex-class">
+            <div class="content flex-class">
+                <button id="lo-button">Log Out</button>
+                <p>Hello</p>
+            </div>
+        </section>
+    </div>
+</body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="./app.js"></script><script src="./app.js"></script>
+</html>

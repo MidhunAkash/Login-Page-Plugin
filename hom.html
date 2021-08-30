@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style2.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="./app2.js"></script>
+    <title>Login Page</title>
+    </head>
+    <body>
+        <div class="header">
+            <div class="less">
+                <h2 class="ch2">&nbsp; &nbsp; Profile page</h2>
+              </div>
+              <div class="more">
+                <h2>&nbsp; &nbsp; Profile page</h2>
+              </div>
+              <div class="less">
+                <img onclick="logout()" class="limage" src="./logout2.png" height="30" width="30">
+              </div>
+              <div class="more">
+                <button onclick="logout()">Log Out</button>
+              </div>
+        </div>
+        <center>
+            <div class="less">
+                <div class="content flex-class">
+                <div><span id="luser-name">Please wait...</span></div>
+                </div>
+            </div>
+            <div class="more">
+                <div class="content flex-class">
+                <div><span id="user-name">Please wait...</span></div>
+                </div>
+            </div>
+        </div></center>
+    </body>
+</html>
