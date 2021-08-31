@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <title>Login Page</title>
 </head>
 
@@ -19,7 +22,7 @@
                     <div class="warnmsg" id="lerrmsg"></div>
                     <input type="email" name="email" id="l-email" placeholder="Email">
                     <input type="password" name="password" id="l-password" placeholder="Password">
-                    <button onclick="login()" id="l-button">Log In</button>
+                    <div id="lbutton"><button onclick="login()" id="l-button">Log In</button></div>
                     <br>
                     <div class="forgot-password">forgot password?</div>
                 </div>
@@ -37,7 +40,7 @@
                     <input type="text" name="name" id="s-name" placeholder="Full Name">
                     <input type="password" name="password" id="s-password" placeholder="Password">
                     <input type="password" name="cpassword" id="c-password" placeholder="Confirm Password">
-                    <button onclick="register()" id="s-button">Sign Up</button>
+                    <div id="sbutton"><button onclick="register()" id="s-button">Sign Up</button></div>
                     <br>
                 </div>
                 <div class="sub-container flex-class">
