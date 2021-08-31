@@ -30,29 +30,34 @@ const firebaseConfig = {
   const database = firebase.database()
 
 function register() {
+  document.getElementById("sbutton").innerHTML = '<i class="fa-config fas fa-spinner fa-spin"></i>'
   const email = document.getElementById('s-email').value
   const password = document.getElementById('s-password').value
   const full_name = document.getElementById('s-name').value
   const cpassword = document.getElementById('c-password').value
     if(email == ""||password==""||full_name==""||cpassword=="") {
         ermsg('All feilds are manitory',"serrmsg")
+        document.getElementById("sbutton").innerHTML = '<button onclick="register()" id="s-button">Sign Up</button>'
         return
     }
     // Validate input fields
     if (validate_email(email) == false ) {
       ermsg('Invalid Email',"serrmsg")
+      document.getElementById("sbutton").innerHTML = '<button onclick="register()" id="s-button">Sign Up</button>'
       return
       // Don't continue running the code
     }
     if (full_name == "") {
+      document.getElementById("sbutton").innerHTML = '<button onclick="register()" id="s-button">Sign Up</button>'
       ermsg('Enter your name',"serrmsg")
       return
     }
     if (validate_pass(password,cpassword) == false) {
+      document.getElementById("sbutton").innerHTML = '<button onclick="register()" id="s-button">Sign Up</button>'
         ermsg('confirm password not matched.',"serrmsg")
         return
       }
-   
+
     // Move on with Auth
     auth.createUserWithEmailAndPassword(email, password)
     .then(function() {
@@ -73,9 +78,29 @@ function register() {
       database_ref.child('users/' + user.uid).set(user_data)
 
       // DOne
+      auth.signInWithEmailAndPassword(email, password)
+    .then(function() {
+      user = auth.currentUser
+      database_ref = database.ref()
+      // Create User data
+      user_data = {
+        last_login : Date.now()
+      }
+  
+      // Push to Firebase Database
+      database_ref.child('users/' + user.uid).update(user_data)
       window.location.href = "./hom.html"
     })
     .catch(function(error) {
+      document.getElementById("sbutton").innerHTML = '<button onclick="register()" id="s-button">Sign Up</button>'
+      // Firebase will use this to alert of its errors
+      error_code = error.code
+      var error_message = error.message
+      alert(error_message)
+    })
+    })
+    .catch(function(error) {
+      document.getElementById("sbutton").innerHTML = '<button onclick="register()" id="s-button">Sign Up</button>'
       // Firebase will use this to alert of its errors
       var error_code = error.code
       var error_message = error.message
@@ -92,11 +117,13 @@ function register() {
   }
 
   function login () {
+    document.getElementById("lbutton").innerHTML = '<i class="fa-config fas fa-spinner fa-spin"></i>'
     // Get all our input fields
    const email = document.getElementById('l-email').value
    const password = document.getElementById('l-password').value
     // Validate input fields
     if (validate_email(email) == false) {
+      document.getElementById("lbutton").innerHTML = '<button onclick="login()" id="l-button">Log In</button>'
       ermsg('Invalid Email',"lerrmsg")
       return
       // Don't continue running the code
@@ -116,9 +143,10 @@ function register() {
   
       // Push to Firebase Database
       database_ref.child('users/' + user.uid).update(user_data)
-      window.location.href = "https://login-page-fd3f0.web.app/hom.html"
+      window.location.href = "./hom.html"
     })
     .catch(function(error) {
+      document.getElementById("lbutton").innerHTML = '<button onclick="login()" id="l-button">Log In</button>'
       // Firebase will use this to alert of its errors
       var error_code = error.code
       var error_message = error.message
