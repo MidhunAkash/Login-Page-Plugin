@@ -19,13 +19,13 @@ const firebaseConfig = {
     if(user) {
         database.ref('/users/' + user.uid).once('value').then(function(snapshot) {
             let userData = snapshot.val();
-            fullName = userData.full_name
             console.log(userData.full_name);
+            fullName = userData.full_name
             document.getElementById("user-name").innerHTML = "Hello, "+ fullName
             document.getElementById("luser-name").innerHTML = "Hello, "+ fullName
         })
     } else {
-        console.log("loged-out")
+        window.location.href = "./index.html"
     }
 })
 function logout() {
