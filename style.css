@@ -15,7 +15,6 @@ body{
 }
 .backg{
     background-image: url("R.jpg");
-
 }
 .wrapper{
     position: absolute;
@@ -26,7 +25,7 @@ body{
     z-index: 2;
 }
 .s-wrapper{
-    height: 90vh;
+    height: 100vh;
     width: 100%;
     overflow: hidden;
 }
@@ -85,8 +84,14 @@ input:focus {
     border-color: #2bb5d8;
     box-shadow: 0 0 10px #2bb5d8;
   }
+
+.fa-config {
+    margin-top: 15px;
+    color: whitesmoke;
+    font-size: 28px;
+}
 button{
-    width: 40%;
+    width: 120px;
     height: 35px;
     background-color: #8a348bc7;
     color: #fff;
